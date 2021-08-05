@@ -12,7 +12,8 @@ RUN apt-get update \
       libasound2-plugins \
     && git clone "https://github.com/respeaker/seeed-voicecard" \
     && cd seeed-voicecard \
-    && sh ./install.sh \
+    && chmod a+x ./install.sh \
+    && ./install.sh \
     && rm -rf .git \
     && apt-get purge -y --auto-remove git
 
